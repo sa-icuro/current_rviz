@@ -1,0 +1,2 @@
+rviz_tools_py:ubiquity_tools
+-DCATKIN_DEVEL_PREFIX=/home/centaur/Desktop/ubi_tools/devel -DCMAKE_INSTALL_PREFIX=/home/centaur/Desktop/ubi_tools/install -G Unix Makefiles

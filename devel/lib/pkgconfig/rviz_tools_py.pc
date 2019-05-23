@@ -1,0 +1,8 @@
+prefix=/home/centaur/Desktop/ubi_tools/devel
+
+Name: rviz_tools_py
+Description: Description of rviz_tools_py
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/centaur/Desktop/ubi_tools/devel/lib 
+Requires: 

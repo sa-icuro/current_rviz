@@ -1,0 +1,59 @@
+This is an outline of how to use the new Ubiquity (Magni) RViz Tools.
+
+The tools added (as buttons) are:
+
+	1) The 'Set Safepoints' button (mimics 2D nav goal Tool) allows the user to drag and set safepoints (1 at a time, shortcut key is 'w').
+
+	2) The 'Set Safepath' button (mimics Selection Tool) allows the user to click on individual safepoints and if the user would like the add safepoint to the 'SAFEPATH' or 'SAFELANE', press the 'a' (accept) key while the safepoint is selected. (shortcut key is 'p'). 
+
+	3) The 'Build Route' button (mimics Selection Tool) allows the user to click on individual safepoints and if the user would like the add safepoint to the current route, they would press the 'a' (accept) key while the safepoint is selected. The Safepath outlined in 'green' and pink spheres allows the user to see the path along which a route can be safely built. (shortcut key is 'r'). 
+ 
+	4) The 'Launch Magni' button (mimics Interact Tool) launches the Magni goal_sender script which sends 2D nav goals to the Magni one at a time. The magni automatically receives goals and begins to traverse these goals as soon as this button is pressed. 
+
+	5) The 'Kill Magni' button (mimics Interact Tool) kills (stops) the Magni goal_sender script which sends 2D nav goals to the Magni one at a time. The magni automatically stops receiving goals as soon as this button is pressed. Note, the last sent goal will still be executed.
+
+The functionality of each tool:
+-> Upon Launching RViz, Please be sure to add the visualization marker topic. It can be done once and saved to your default.rviz config for future ease. 
+
+	1) The 'Set Safepoints' button mimics the 2D_Nav_Goal Tool
+	   :
+	   : Shortcut key: 'w'
+	   : Allows the user to drag and set safepoints, One (1) at a time.
+	   : The tool is simmilar to 2D_Nav_Goal so holding the mouse-click allows the user to set an orientation for the magni.
+	   : If an angle is not set by the user, 0 degrees is set as the default. 
+	   : Also, the (posX,posY,orientationZ) for this safepoint (or fiducial) will be added to the safepoints.txt file.
+
+
+	2) The 'Set Safepath' buttons mimics the Selection Tool
+	   :
+	   : Shortcut key: 'p'
+	   : Allows user to select individual safepoints (and even fiducials!).
+	   : By adding the selection panel to the RViz display, the information set for each safepoint (or a fiducial) can be seen.
+	   : If this is the safpoint (or fiducial) that is desired to be added to the safepath, press 'a' (accept key) to add this safepoint 
+	   : (or fiducial) to the current safwpath. This is visualized with a PINK orb. Also, the (posX,posY,orientationZ) for this safepath
+       : (or fiducial) will be added to the paths.txt file.
+       :
+       : IT IS IMPORTANT TO *ALWAYS* BUILD SAFEPATHS FROM THE STARTING NODE (WHITE CUBE) & END THEM AT THE STARTING NODE
+       : Even if the second time RViz is launched and your safepath is populated, please take care that if you decide to add more safepoints and add them to the 
+       : safepath, that you build the safepath FROM THE STARTING NODE and END @ THE STARTING NODE
+
+	3) The 'Build Route' buttons mimics the Selection Tool
+	   :
+	   : Shortcut key: 'r'
+	   : Allows user to select individual safepoints (with connected safepaths) (and even fiducials!).
+	   : By adding the selection panel to the RViz display, the information set for each safepoint (or a fiducial) can be seen.
+	   : If this is the safpoint (or fiducial) that is desired to be added to the route, press 'a' (accept key) to add this safepoint 
+	   : (or fiducial) to the current route. This is visualized with a blue orb. Also, the posX,posY,orientationZ for this safepoint
+	   : (or fiducial) will be added to the final_goals.yaml file.
+	   : PLEASE ENSURE THAT ONCE THE ROUTE IS BUILT, YOU MUST SAVE "final_goals.yaml" AS A DIFFERENT FILE, ELSE IT WILL BE OVERRIDDED!!!
+
+	4) The 'Launch Magni' button mimics the Interact Tool
+	   :
+	   : No Shortcut key
+	   : Once clicked it will launch the goal_sender.py scritpy and send the magni 1 2D nav-goal at a time as set by the Set Safepoints tool. 
+	   : After execution this tool continues to act as the interact tool. 
+
+	5) The 'Kill Magni' button mimics the Interact Tool
+	   :
+	   : No Shortcut key
+	   : Once clicked it will kill the goal_sender.py script and then simply act as the interact tool.

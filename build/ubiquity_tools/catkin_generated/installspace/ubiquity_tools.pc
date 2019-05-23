@@ -1,0 +1,8 @@
+prefix=/home/centaur/Desktop/ubi_tools/install
+
+Name: ubiquity_tools
+Description: Description of ubiquity_tools
+Version: 0.10.3
+Cflags: 
+Libs: -L/home/centaur/Desktop/ubi_tools/install/lib 
+Requires: 
